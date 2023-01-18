@@ -7,6 +7,7 @@ import { getCategory } from '@/Api/category';
 import { getSpecifiedReviewPoster } from '@/Api/reviewPoster';
 import ReviewPoster from '@/components/Home/ReviewPoster';
 import CategoryList from '@/components/Home/Category/CategoryList';
+import apiCreate from '@/Api/api';
 
 type DataType = {
   category: Category[];
@@ -35,6 +36,8 @@ const Home = () => {
     'text-start sm:text-base md:text-lg lg:text-xl text-TEXT_BASE_BLACK font-semibold mb-2';
 
   useEffect(() => {
+    const start = async () => await apiCreate.get('/api/users/get-users');
+    console.log(start);
     // const run = async () => {
     //   try {
     //     const getAllMainData = (
@@ -79,11 +82,10 @@ const Home = () => {
     // run();
   }, []);
 
-  if (data && !loading) {
-    return (
-      <>
-        <div>test</div>
-        {/* <h1
+  return (
+    <>
+      <div>test</div>
+      {/* <h1
           className={`md:hidden absolute top-5 left-1/2 -translate-x-1/2 text-5xl text-BASE font-extrabold`}
         >
           HIT
@@ -109,11 +111,8 @@ const Home = () => {
         </section>
         <InformLoginModal />
         <InformLogOutModal /> */}
-      </>
-    );
-  } else {
-    return <div>...Loading</div>;
-  }
+    </>
+  );
 };
 
 export default Home;
