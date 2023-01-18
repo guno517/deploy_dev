@@ -1,3 +1,3 @@
-import api from './api';
+import apiCreate from './api';
 
-export const getCategory = () => api.get('/channels');
+export const getCategory = () => apiCreate.get('/api/channels');
