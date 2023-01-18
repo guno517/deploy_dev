@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import apiCreate from '@/Api/api';
+import api from '@/Api/api';
 
 const API_URL = {
   USER: {
@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const start = async () => {
       try {
-        const response = await apiCreate.get(API_URL.USER.GET_USERS);
+        const response = await api.get(`api/users/get-users`);
         console.log(response);
       } catch (error) {
         console.error(error);
