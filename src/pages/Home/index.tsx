@@ -38,12 +38,14 @@ const Home = () => {
   useEffect(() => {
     const start = async () => {
       try {
-        await apiCreate.get('/api/users/get-users');
+        const response = await apiCreate.get('/api/users/get-users');
+        console.log(response);
       } catch (error) {
         console.error(error);
       }
     };
-    console.log(start);
+    start();
+
     // const run = async () => {
     //   try {
     //     const getAllMainData = (
