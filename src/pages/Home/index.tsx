@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const start = async () => {
       try {
-        const response = await api.get(`api/users/get-users`);
+        const response = await api.get(`/users/get-users`);
         console.log(response);
       } catch (error) {
         console.error(error);
