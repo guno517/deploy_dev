@@ -36,7 +36,13 @@ const Home = () => {
     'text-start sm:text-base md:text-lg lg:text-xl text-TEXT_BASE_BLACK font-semibold mb-2';
 
   useEffect(() => {
-    const start = async () => await apiCreate.get('/api/users/get-users');
+    const start = async () => {
+      try {
+        await apiCreate.get('/api/users/get-users');
+      } catch (error) {
+        console.error(error);
+      }
+    };
     console.log(start);
     // const run = async () => {
     //   try {
