@@ -3,7 +3,8 @@ import apiCreate from '@/Api/api';
 
 const API_URL = {
   USER: {
-    GET_USERS: 'api/users/get-users',
+    // GET_USERS: 'api/users/get-users',
+    GET_USERS: '/users/get-users',
   },
 };
 
